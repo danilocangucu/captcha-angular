@@ -1,1 +1,16 @@
-<p>captcha works!</p>
+<br>
+<mat-progress-bar
+    mode="determinate"
+    [value]="progress">
+</mat-progress-bar>
+<br>
+<re-captcha
+    *ngIf="progress < 50"
+    (resolved)="updateRecaptchaWin()"
+    siteKey="6LcdNVYoAAAAAJFHYuF_cO-_KD8SDhQyNU-nrd9L"
+    >
+</re-captcha>
+<ng-hcaptcha
+    *ngIf="progress == 50"
+    (verify)="updateHcaptchaWin()">
+</ng-hcaptcha>

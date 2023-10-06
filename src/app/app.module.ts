@@ -7,6 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { CaptchaComponent } from './captcha/captcha.component';
 import { ResultComponent } from './result/result.component';
 
+import { NgHcaptchaModule } from 'ng-hcaptcha';
+import { RecaptchaModule } from 'ng-recaptcha';
+
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +22,13 @@ import { ResultComponent } from './result/result.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgHcaptchaModule.forRoot({
+      siteKey: 'faf6905d-c3d6-4694-a69f-726b6b0e8f78',
+      languageCode: 'en'
+    }),
+    RecaptchaModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

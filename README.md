@@ -1,27 +1,50 @@
-# CaptchaNg
+# Angular CAPTCHA Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+This is an Angular project that includes two CAPTCHA challenges: one using hCaptcha and the other using reCAPTCHA. The user's progress through the challenges is tracked and stored in `localStorage`. When the user completes both challenges, they are redirected to a `/result` route where they can see a congratulatory message and reset their progress if they want to do the challenges again.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You need to have Node.js and npm installed on your machine. You can download Node.js from the [official website](https://nodejs.org/en/download/). npm is included in the Node.js installation.
 
-## Build
+### Installing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository to your local machine:
 
-## Running unit tests
+   ```bash
+   git clone https://github.com/your-repo/angular-captcha.git
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navigate to the project directory:
 
-## Running end-to-end tests
+   ```bash
+   cd captcha-angular
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Install the project dependencies:
 
-## Further help
+   ```bash
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Start the development server:
+
+   ```bash
+   ng serve
+   ```
+
+5. Open your browser and navigate to `http://localhost:4200/` to see the application in action.
+
+## Usage
+
+When you navigate to the `/captcha` route, you'll see two CAPTCHA challenges. The user's progress is displayed in a progress bar at the top of the page, created using Angular Material's mat-progress-bar. When the user completes both challenges, they are redirected to the `/result` route where they can see a congratulatory message. If the user wants to do the challenges again, they can click the "Reset progress and start over" button to reset their progress and be redirected back to the `/captcha` route.
+
+## Built With
+
+* [Angular](https://angular.io/) - The web framework used
+* [reCAPTCHA](https://www.google.com/recaptcha) - The CAPTCHA service used for the first challenge
+* [hCaptcha](https://www.hcaptcha.com/) - The CAPTCHA service used for the second challenge
+* [Angular Material](https://material.angular.io/) - The UI library used for the progress bar

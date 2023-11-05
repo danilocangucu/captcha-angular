@@ -27,7 +27,7 @@ You need to have Node.js and npm installed on your machine. You can download Nod
 3. Install the project dependencies:
 
    ```bash
-   npm install
+   npm start
    ```
 
 4. Start the development server:

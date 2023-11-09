@@ -1,16 +1,17 @@
-<br>
-<mat-progress-bar
-    mode="determinate"
-    [value]="progress">
-</mat-progress-bar>
-<br>
-<re-captcha
-    *ngIf="progress < 50"
-    (resolved)="updateRecaptchaWin()"
-    siteKey="6LcdNVYoAAAAAJFHYuF_cO-_KD8SDhQyNU-nrd9L"
-    >
-</re-captcha>
-<ng-hcaptcha
-    *ngIf="progress == 50"
-    (verify)="updateHcaptchaWin()">
-</ng-hcaptcha>
+<div class="captcha">
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+    <br>
+<div *ngIf="challengeType === 'recaptcha'">
+    <re-captcha (resolved)="updateChallengeWin()" siteKey="6LcdNVYoAAAAAJFHYuF_cO-_KD8SDhQyNU-nrd9L"></re-captcha>
+</div>
+
+<div *ngIf="challengeType === 'hcaptcha'">
+    <ng-hcaptcha (verify)="updateChallengeWin()"></ng-hcaptcha>
+</div>
+
+<div *ngIf="challengeType === 'text'">
+    <p>Enter the following text: "{{ challengeStrings[0] }}"</p>
+    <input [(ngModel)]="userInput" placeholder="Enter the text">
+    <button (click)="checkTextChallenge()">Submit</button>
+</div>
+</div>

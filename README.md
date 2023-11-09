@@ -27,13 +27,13 @@ You need to have Node.js and npm installed on your machine. You can download Nod
 3. Install the project dependencies:
 
    ```bash
-   npm start
+   npm install
    ```
 
 4. Start the development server:
 
    ```bash
-   ng serve
+   npm start
    ```
 
 5. Open your browser and navigate to `http://localhost:4200/` to see the application in action.
